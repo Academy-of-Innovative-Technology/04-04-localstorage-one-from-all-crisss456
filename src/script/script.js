@@ -5,16 +5,12 @@ var Database = {
 
 function loadDataSource() {
 
-  // get data from localStorage
   var storedData = localStorage.getItem(Database.keyName);
 
-  // convert JSON string into JavaScript object
   var parsedData = JSON.parse(storedData);
 
-  // save data into Database object
   Database.data = parsedData.response;
 
-  // fill dropdown with mutant aliases
   var select = document.querySelector("#select-mutant");
 
   for (var i = 0; i < Database.data.length; i++) {
